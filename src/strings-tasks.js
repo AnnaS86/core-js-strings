@@ -20,7 +20,10 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-  return [value].length;
+  if (typeof value !== 'string') {
+    return 0;
+  }
+  return value.length;
 }
 
 /**
@@ -43,7 +46,7 @@ function isString(value) {
 }
 
 /**
- * Returns the result of concatenatiogit n of two strings.
+ * Returns the result of concatenation of two strings.
  *
  * @param {string} value1 - The first string to concatenate.
  * @param {string} value2 - The second string to concatenate.
@@ -84,8 +87,8 @@ function getFirstChar(value) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
