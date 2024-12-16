@@ -41,8 +41,7 @@ function getStringLength(value) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  // eslint-disable-next-line no-unused-expressions
-  typeof value === 'string';
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
